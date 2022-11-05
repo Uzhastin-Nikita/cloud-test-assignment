@@ -9,4 +9,5 @@ This is a simple application, that will allow you to dynamically manage the conf
 - Typescript
 - TypeORM
 - Postgres
+- nestjs
 - Docker
