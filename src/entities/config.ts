@@ -1,12 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
-export class Configs {
+export class configs {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    jsonData: JSON[];
+    @Column({type: "json", array: true})
+    jsondata: JSON[];
 
     @Column()
     version: number;
