@@ -1,21 +1,19 @@
-import { Configs } from "src/entities/config";
-import { DataSource } from "typeorm";
+import { configs } from "../entities/config";
+import { createConnection } from "typeorm";
+import dotenv from "dotenv";
 
-export const AppDataSource = new DataSource({
-    type: "postgres",
-    host: process.env.PGHOST,
-    port: process.env.PGPORT,
-    username: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    database: process.env.PGDATABASE,
-    entities: [ Configs ],
-    synchronize: true,
-    logging: false,
-})
+dotenv.config();
 
-AppDataSource.initialize().then(() => {
-    console.log("Database connection initialized");
-}).catch((err: any) => {
-    console.log(err);
-});
+export const dbConnection = async () => {
+    const connection = await createConnection({
+        type: "postgres",
+        host: process.env.PGHOST,
+        port: 5432,
+        username: process.env.PGUSER,
+        password: process.env.PGPASSWORD,
+        database: process.env.PGDATABASE,
+        entities: [configs],
+    });
+    return connection;
+}
 
