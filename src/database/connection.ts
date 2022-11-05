@@ -1,5 +1,5 @@
 import { configs } from "../entities/config";
-import { createConnection, DataSource } from "typeorm";
+import { DataSource } from "typeorm";
 import dotenv from "dotenv";
 
 dotenv.config();
