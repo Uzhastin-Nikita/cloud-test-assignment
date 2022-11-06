@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-dotenv.config();
 export const dbConnection = new DataSource({
     type: "postgres",
     host: process.env.PGHOST,
