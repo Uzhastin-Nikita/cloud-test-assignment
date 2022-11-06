@@ -49,3 +49,22 @@ This is a simple application, that will allow you to dynamically manage the conf
 
 - Start docker file `docker build -t cloud-test-assignment .`
 
+### Example of requests
+
+Создание конфигурации
+```
+curl -d '{"key1": "value1", "key2: "value2""}' -H "Content-Type: application/json" -X POST http://localhost:3000/config
+```
+
+
+```
+{"service":"service-k8s","jsondata":{}}
+```
+
+Получение конфигурации
+```
+curl http://localhost:3000/config/4
+```
+```
+{"id":4,"service":"service-k8s","jsondata":{},"version":4}%   
+```                
