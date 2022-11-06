@@ -3,6 +3,8 @@ import express from 'express';
 
 import configRoutes from './api/configRoutes';
 
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 export const runServer = async () => {
     const app = express();
     app.use('/', configRoutes);

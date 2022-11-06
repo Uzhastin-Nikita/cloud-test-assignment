@@ -17,7 +17,7 @@ export const dbConnection = new DataSource({
 
 dbConnection.initialize()
 .then( async () => {
-  console.log("Connected")
+    console.log("Database connected");
 }
 ).catch((err)  => console.log(`${err}`));
 
